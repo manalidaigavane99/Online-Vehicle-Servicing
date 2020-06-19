@@ -1,0 +1,45 @@
+{% extends 'dapp/base.html' %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+      <h3>Login here :</h3>
+<form method="post" action="{% url 'dapp:user_login' %}">
+          {% csrf_token %}
+          {# A more "HTML" way of creating the login form#}
+          <label for="username">Username:</label>
+          <input type="text" name="username" placeholder="Username">
+          <br>
+<label for="password">Password:</label>
+          <input type="password" name="password" placeholder="Password">
+          <br>
+          <label for="cars">Vehicle Type:</label>
+          <select name="cars" id="cars">
+            <option value="volvo">2 wheeler</option>
+            <option value="saab">4 wheeler</option>
+            <option value="mercedes">6 wheeler</option>
+          
+          </select>
+          <br>
+          <label for="Problem">Problem:</label>
+          <select name="Problem" id="Problem">
+            <option value="volvo">Dead Battery</option>
+            <option value="saab">Radiator Fail</option>
+            <option value="mercedes">Wet Interiors</option>
+            <option value="mercedes">Tyre Loosing Pressure Quickly</option>
+            <option value="mercedes">Engine problem</option>
+          
+          </select>
+          <br>
+          <label for="checkup">General CheckUp:</label>
+          <select name="checkup" id="checkup">
+            <option value="volvo">Yes</option>
+            <option value="saab">No</option>
+          
+          </select>
+          <br>
+
+<input type="submit" name="" value="Login">
+</form>
+</div>
+  </div>
+{% endblock %}

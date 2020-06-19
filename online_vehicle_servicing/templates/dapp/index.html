@@ -1,0 +1,26 @@
+
+{% extends "dapp/base.html" %}
+{%load static%}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>THE MOTOR MAN !</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+    {% else %}
+        <h2>           Register or Login if you'd like to</h2>
+    {% endif %}
+   
+  </div>
+</div>
+<div class="container">
+  <div class="jumbotron">
+    <p>The Motorman brings together hassle free car servicing and detailing with 24x7 customer care. We are India's first car service company that works in night hours to meet your busy schedule. The Motorman helps in maximising the lifespan and car value with regular car servicing.</p>
+    <p>Our partnering service stations are trained to service a wide range of make and model of cars using the latest techniques and diagnostic equipment. We aim at offering straightforward and honest service without upselling spare parts or services.</p>
+    <p>
+      <img src="{% static 'images/img2.jpeg' %}" alt="" >
+      <img src="{% static 'images/img3.jpeg' %}" alt="">
+      <img src="{% static 'images/img4.jpeg' %}" alt="">
+    </p>
+</div>
+{% endblock %}
